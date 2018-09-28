@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Launcher">
+      <UniqueIdentifier>{79485812-0431-453a-a263-bc807330f4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Start">
+      <UniqueIdentifier>{aff7a69e-706d-4380-a1ff-b7b6b249c605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame">
+      <UniqueIdentifier>{2927551a-47ad-4b81-a03b-66b55e07b250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InGame\Board">
+      <UniqueIdentifier>{cfc8f035-79f5-4332-86a3-1323c7092211}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KCoreLauncher.h">
+      <Filter>Launcher</Filter>
+    </ClInclude>
+    <ClInclude Include="AngryStart.h">
+      <Filter>Start</Filter>
+    </ClInclude>
+    <ClInclude Include="AngryStartUpdater.h">
+      <Filter>Start</Filter>
+    </ClInclude>
+    <ClInclude Include="AngryBuilder.h">
+      <Filter>InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="AngryUpdater.h">
+      <Filter>InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Win_Board.h">
+      <Filter>InGame\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu_Board.h">
+      <Filter>InGame\Board</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KCoreLauncher.cpp">
+      <Filter>Launcher</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryStart.cpp">
+      <Filter>Start</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryStartUpdater.cpp">
+      <Filter>Start</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryBuilder.cpp">
+      <Filter>InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="AngryUpdater.cpp">
+      <Filter>InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Win_Board.cpp">
+      <Filter>InGame\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu_Board.cpp">
+      <Filter>InGame\Board</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
