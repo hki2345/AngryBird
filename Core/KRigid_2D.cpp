@@ -445,7 +445,7 @@ void KRigid_2D::Set_Poly()
 		KVecVec[i] = m_VertexVec[i]->Local_Pos().m_Pos;
 	}
 
-	m_Poly->Set(KVecVec, m_VertexVec.size());
+	m_Poly->Set(KVecVec, (int)m_VertexVec.size());
 
 
 	m_FD->shape = m_Poly;
