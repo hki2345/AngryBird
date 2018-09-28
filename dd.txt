@@ -1,0 +1,9 @@
+https://veendeta.wordpress.com/2012/02/16/tutorial-getting-started-with-box2d/ - Box2D
+https://blog.naver.com/itsmejw/221310150372 - AABB  충돌 - 자료
+https://gamedevelopment.tutsplus.com/tutorials/how-to-create-a-custom-2d-physics-engine-oriented-rigid-bodies--gamedev-8032
+ - physics 구현
+
+http://gall.dcinside.com/mgallery/board/view/?id=game_dev&no=17921 - 충돌 구현 자료
+http://lsit81.tistory.com/53 - 다각형의 무게중심
+
+https://www.youtube.com/watch?v=aiiQ8btusrs&t=43s - 맵 영상

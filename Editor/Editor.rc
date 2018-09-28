@@ -1,0 +1,787 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+#include "verrsrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어(대한민국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "#include ""verrsrc.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#include ""res\\Editor.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""l.KOR\\afxres.rc""      // 표준 구성 요소\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Editor.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "끝내기(&X)",                     ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)\tCtrl+Z",           ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "Editor 정보(&A)...",            ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Editor 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "Editor, 버전 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2018",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "확인",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_MAIN_MENU DIALOGEX 0, 0, 525, 338
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_MENUTAB,"SysTabControl32",TCS_VERTICAL | TCS_MULTILINE,7,7,511,324
+END
+
+IDD_STATE DIALOGEX 0, 0, 307, 338
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_SCENELIST,7,7,104,324,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_CURSCENENAME,118,7,83,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_SCENE_NAME,118,28,83,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "State Create",IDC_SCENECREATOR,118,49,83,14
+    PUSHBUTTON      "Save",IDC_STATESAVEBTN,117,70,84,16
+    PUSHBUTTON      "Load",IDC_STATELOADBTN,118,88,84,16
+END
+
+IDD_SPRITE DIALOGEX 0, 0, 357, 403
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,198,382,50,14
+    PUSHBUTTON      "취소",2,300,382,50,14
+    CONTROL         "",IDC_TREE1,"SysTreeView32",WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,133,389
+    EDITTEXT        IDC_SPRITENAME,149,15,74,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_SPRITEU,167,36,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SPRITEV,167,55,75,14,ES_AUTOHSCROLL
+    LTEXT           "U",IDC_STATIC,150,39,8,8
+    LTEXT           "V",IDC_STATIC,150,57,8,8
+    PUSHBUTTON      "Save",IDC_SAVE,148,83,55,18
+    PUSHBUTTON      "Load",IDC_LOAD,208,83,55,18
+END
+
+IDD_THEONE DIALOGEX 0, 0, 585, 325
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Bottom",IDC_BOTTOMCREATOR,68,249,39,19
+    GROUPBOX        "Panza",IDC_STATIC,11,165,112,54
+    PUSHBUTTON      "Middle",IDC_MIDDLEPAN,68,174,39,19
+    PUSHBUTTON      "Small",IDC_SMALLPAN,26,174,39,19
+    PUSHBUTTON      "Giant",IDC_GIANTPAN,68,195,39,19
+    PUSHBUTTON      "Big",IDC_BIGPAN,26,195,39,19
+    LTEXT           "Gravity",IDC_STATIC,9,149,24,8
+    EDITTEXT        IDC_GRAVITYX,54,147,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GRAVITYY,96,147,28,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,45,150,8,8
+    LTEXT           "Y",IDC_STATIC,87,150,8,8
+    PUSHBUTTON      "Launcher",IDC_LAUNCHERCREATOR,13,279,107,17
+    PUSHBUTTON      "Delete All",IDC_DELETEALL,13,298,107,17
+    CONTROL         "",IDC_ONETREE,"SysTreeView32",WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,120,131
+    PUSHBUTTON      "Pig",IDC_PIGCREATOR,68,229,39,19
+    PUSHBUTTON      "Bomb",IDC_BOMBCREATOR,26,229,39,19
+    GROUPBOX        "Object",IDC_STATIC,12,219,112,54
+    PUSHBUTTON      "Grass",IDC_GRASSCREATOR,26,249,39,19
+END
+
+IDD_TRANS DIALOGEX 0, 0, 309, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_XSCALE,78,63,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_YSCALE,148,63,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_ZSCALE,220,63,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_XROTATE,77,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_YROTATE,149,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZROTATE,221,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_XPOS,77,19,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_YPOS,149,19,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ZPOS,221,19,40,14,ES_AUTOHSCROLL
+    LTEXT           "Position",IDC_STATIC,16,23,26,8
+    LTEXT           "Rotation",IDC_STATIC,15,46,28,8
+    LTEXT           "Scale",IDC_STATIC,17,65,18,8
+    EDITTEXT        IDC_XSCALE2,61,65,6,14,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_YSCALE2,131,65,6,14,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_ZSCALE2,203,65,6,14,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED | NOT WS_BORDER
+    EDITTEXT        IDC_XROTATE2,59,44,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_YROTATE2,131,44,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_ZROTATE2,203,44,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_XPOS2,59,20,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_YPOS2,131,20,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_ZPOS2,203,20,6,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END
+
+IDD_DLG_NONECOM DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,198,155,50,14
+    PUSHBUTTON      "취소",IDCANCEL,252,155,50,14
+END
+
+IDD_ADDCOMPO DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Add Component",IDC_ADD_COMBTN,107,14,101,18
+    COMBOBOX        IDC_ADDCOMBO,108,37,100,76,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DLG_SPRITERENDER DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Image Search",IDC_IMAGE_SLT,15,14,125,26
+    CONTROL         "",IDC_SPRITE_COLORBTN,"MfcColorButton",WS_TABSTOP,15,46,126,24
+    CONTROL         "",IDC_UVSLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,177,20,100,15
+    EDITTEXT        IDC_UVINDEX,193,50,61,18,ES_AUTOHSCROLL
+END
+
+IDD_DLG_SPRITESELECT DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,198,155,50,14
+    PUSHBUTTON      "취소",IDCANCEL,252,155,50,14
+END
+
+IDD_PANZA DIALOGEX 0, 0, 309, 218
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Mass",IDC_STATIC,17,117,17,8
+    LTEXT           "Inertia",IDC_STATIC,17,134,22,8
+    LTEXT           "Restitution",IDC_STATIC,147,160,36,8
+    CONTROL         "Ice",IDC_ICERADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,10,23,26,10
+    CONTROL         "Wood",IDC_WOODRADIO,"Button",BS_AUTORADIOBUTTON,10,36,35,10
+    CONTROL         "Stone",IDC_STONERADIO,"Button",BS_AUTORADIOBUTTON,10,49,35,10
+    CONTROL         "Small",IDC_SMALLRADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,194,23,32,10
+    CONTROL         "Middle",IDC_MIDDLERADIO,"Button",BS_AUTORADIOBUTTON,193,36,36,10
+    CONTROL         "Big",IDC_BIGRADIO,"Button",BS_AUTORADIOBUTTON,193,49,25,10
+    CONTROL         "Giant",IDC_GIANTRADIO,"Button",BS_AUTORADIOBUTTON,193,62,33,10
+    GROUPBOX        "Material",IDC_MATERIALGR,7,7,66,80,WS_GROUP
+    GROUPBOX        "Shape",IDC_SHAPEGR,93,7,74,89
+    GROUPBOX        "Size",IDC_SIZEGR,189,7,71,82,WS_GROUP
+    CONTROL         "ABS Triangle",IDC_ABSTRIRADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,97,22,56,10
+    CONTROL         "RIA Triangle",IDC_RIATRIRADIO,"Button",BS_AUTORADIOBUTTON,97,34,55,10
+    CONTROL         "ABS Rect",IDC_ABSRECTRADIO,"Button",BS_AUTORADIOBUTTON,97,47,45,10
+    CONTROL         "ANG RECT",IDC_ANGRECT,"Button",BS_AUTORADIOBUTTON,97,59,49,10
+    CONTROL         "Circle",IDC_CIRCLERADIO,"Button",BS_AUTORADIOBUTTON,97,71,33,10
+    EDITTEXT        IDC_PANMASS,60,114,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANINER,60,132,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANREDI,192,159,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANDES,192,115,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANFIRC,192,137,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANCENTERX,60,150,40,14,ES_AUTOHSCROLL
+    LTEXT           "Density",IDC_STATIC,147,118,25,8
+    LTEXT           "Friction",IDC_STATIC,147,139,24,8
+    LTEXT           "Center",IDC_STATIC,17,158,23,8
+    GROUPBOX        "Mass Data",IDC_STATIC,7,103,117,78
+    GROUPBOX        "Figure Data",IDC_STATIC,132,104,130,77
+    EDITTEXT        IDC_PANCENTERY,60,164,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,50,153,8,8
+    LTEXT           "Y",IDC_STATIC,50,167,8,8
+    PUSHBUTTON      "Save",IDC_PANZASAVE,241,189,50,14
+    PUSHBUTTON      "Load",IDC_PANZALOAD,184,189,50,14
+END
+
+IDD_BOTTOM DIALOGEX 0, 0, 309, 127
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Mass",IDC_STATIC,17,14,17,8
+    LTEXT           "Inertia",IDC_STATIC,17,31,22,8
+    LTEXT           "Restitution",IDC_STATIC,147,57,36,8
+    EDITTEXT        IDC_PANMASS,60,11,40,14,ES_AUTOHSCROLL | ES_READONLY | WS_DISABLED
+    EDITTEXT        IDC_PANINER,60,30,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PANREDI,192,56,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PANDES,192,12,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PANFIRC,192,34,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PANCENTERX,60,47,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Density",IDC_STATIC,147,15,25,8
+    LTEXT           "Friction",IDC_STATIC,147,36,24,8
+    LTEXT           "Center",IDC_STATIC,17,55,23,8
+    GROUPBOX        "Mass Data",IDC_STATIC,7,0,117,78
+    GROUPBOX        "Figure Data",IDC_STATIC,132,1,130,77
+    EDITTEXT        IDC_PANCENTERY,60,62,40,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "X",IDC_STATIC,50,50,8,8
+    LTEXT           "Y",IDC_STATIC,50,64,8,8
+    PUSHBUTTON      "Edit",IDC_BOTTOMEDIT,241,97,50,14
+    CONTROL         "Launcher Bottom",IDC_LBOTTOM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,92,70,10
+END
+
+IDD_BIRD DIALOGEX 0, 0, 326, 227
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Mass",IDC_STATIC,17,117,17,8
+    LTEXT           "Inertia",IDC_STATIC,17,134,22,8
+    LTEXT           "Restitution",IDC_STATIC,147,160,36,8
+    CONTROL         "Red",IDC_REDRADIO,"Button",BS_AUTORADIOBUTTON,91,51,29,10
+    CONTROL         "Blue",IDC_BLUERADIO,"Button",BS_AUTORADIOBUTTON,10,20,29,10
+    CONTROL         "Chuck",IDC_CHUCKRADIO,"Button",BS_AUTORADIOBUTTON,10,63,35,10
+    GROUPBOX        "Who",IDC_WHOGR,7,7,174,87,WS_GROUP
+    EDITTEXT        IDC_PANMASS,60,114,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANINER,60,133,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANREDI,192,159,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANDES,192,115,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANFIRC,192,137,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANCENTERX,60,150,40,14,ES_AUTOHSCROLL
+    LTEXT           "Density",IDC_STATIC,147,118,25,8
+    LTEXT           "Friction",IDC_STATIC,147,139,24,8
+    LTEXT           "Center",IDC_STATIC,17,158,23,8
+    GROUPBOX        "Mass Data",IDC_STATIC,7,103,117,78
+    GROUPBOX        "Figure Data",IDC_STATIC,132,104,130,77
+    EDITTEXT        IDC_PANCENTERY,60,165,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,50,153,8,8
+    LTEXT           "Y",IDC_STATIC,50,167,8,8
+    PUSHBUTTON      "Save",IDC_BIRDSAVE,259,197,50,14
+    PUSHBUTTON      "Load",IDC_BIRDLOAD,201,197,50,14
+    CONTROL         "Bomb",IDC_BOMBRADIO,"Button",BS_AUTORADIOBUTTON,10,35,33,10
+    CONTROL         "Bubble",IDC_BUBBLERADIO,"Button",BS_AUTORADIOBUTTON,10,49,37,10
+    CONTROL         "Hal",IDC_HALRADIO,"Button",BS_AUTORADIOBUTTON,10,77,26,10
+    CONTROL         "Matilda",IDC_MATILDARADIO,"Button",BS_AUTORADIOBUTTON,91,21,39,10
+    CONTROL         "MightyEagle",IDC_MIGHTYRADIO,"Button",BS_AUTORADIOBUTTON,91,36,55,10
+    CONTROL         "Terence",IDC_TERENCERADIO,"Button",BS_AUTORADIOBUTTON,91,64,42,10
+END
+
+IDD_LAUNCHER DIALOGEX 0, 0, 309, 136
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Create",IDD_CREATE,239,105,50,14
+    CONTROL         "Red",IDC_REDRADIO,"Button",BS_AUTORADIOBUTTON,91,50,29,10
+    CONTROL         "Blue",IDC_BLUERADIO,"Button",BS_AUTORADIOBUTTON,10,20,29,10
+    CONTROL         "Chuck",IDC_CHUCKRADIO,"Button",BS_AUTORADIOBUTTON,10,63,35,10
+    GROUPBOX        "Who",IDC_WHOGR,7,7,148,87,WS_GROUP
+    CONTROL         "Bomb",IDC_BOMBRADIO,"Button",BS_AUTORADIOBUTTON,10,35,33,10
+    CONTROL         "Bubble",IDC_BUBBLERADIO,"Button",BS_AUTORADIOBUTTON,10,49,37,10
+    CONTROL         "Hal",IDC_HALRADIO,"Button",BS_AUTORADIOBUTTON,10,77,26,10
+    CONTROL         "Matilda",IDC_MATILDARADIO,"Button",BS_AUTORADIOBUTTON,91,21,39,10
+    CONTROL         "MightyEagle",IDC_MIGHTYRADIO,"Button",BS_AUTORADIOBUTTON,91,35,55,10
+    CONTROL         "Terence",IDC_TERENCERADIO,"Button",BS_AUTORADIOBUTTON,91,64,42,10
+    DEFPUSHBUTTON   "Delete All",IDD_DELETEALL,179,105,50,14
+    EDITTEXT        IDC_PANREDI,235,70,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANDES,235,22,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PANFIRC,235,46,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Score Data",IDC_STATIC,163,7,130,87
+    LTEXT           "One Star",IDC_STATIC,179,24,30,8
+    LTEXT           "Two Star",IDC_STATIC,179,48,30,8
+    LTEXT           "Three Socre",IDC_STATIC,180,72,40,8
+END
+
+IDD_GRASS DIALOGEX 0, 0, 309, 176
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "2",IDC_SMALLRADIO,"Button",BS_AUTORADIOBUTTON,15,52,32,10
+    CONTROL         "3",IDC_MIDDLERADIO,"Button",BS_AUTORADIOBUTTON,15,66,20,10
+    CONTROL         "4",IDC_BIGRADIO,"Button",BS_AUTORADIOBUTTON,15,79,25,10
+    CONTROL         "5",IDC_GIANTRADIO,"Button",BS_AUTORADIOBUTTON,15,92,33,10
+    GROUPBOX        "Image Number",IDC_SIZEGR,10,12,71,96,WS_GROUP
+    CONTROL         "0",IDC_ANGRECT,"Button",BS_AUTORADIOBUTTON,15,26,49,10
+    CONTROL         "1",IDC_CIRCLERADIO,"Button",BS_AUTORADIOBUTTON,15,39,33,10
+END
+
+IDD_PIG DIALOGEX 0, 0, 316, 109
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Small",IDC_SMALLRADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,20,30,32,10
+    CONTROL         "Middle",IDC_MIDDLERADIO,"Button",BS_AUTORADIOBUTTON,19,44,36,10
+    CONTROL         "Big",IDC_BIGRADIO,"Button",BS_AUTORADIOBUTTON,19,57,25,10
+    CONTROL         "Giant",IDC_GIANTRADIO,"Button",BS_AUTORADIOBUTTON,19,70,33,10
+    GROUPBOX        "Size",IDC_SIZEGR,15,14,71,82,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "Editor"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Editor.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "Editor.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_MAIN_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 518
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+    END
+
+    IDD_STATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+    END
+
+    IDD_SPRITE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 350
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 396
+    END
+
+    IDD_THEONE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 578
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 318
+    END
+
+    IDD_TRANS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DLG_NONECOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_ADDCOMPO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_DLG_SPRITERENDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_DLG_SPRITESELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_PANZA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_BOTTOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 120
+    END
+
+    IDD_BIRD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 220
+    END
+
+    IDD_LAUNCHER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_GRASS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 169
+    END
+
+    IDD_PIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_MAIN_MENU AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_STATE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_SPRITE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_THEONE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_TRANS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_NONECOM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_ADDCOMPO AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_SPRITERENDER AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_SPRITESELECT AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PANZA AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_BOTTOM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_BIRD AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_LAUNCHER AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_GRASS AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_PIG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DLG_SPRITERENDER DLGINIT
+BEGIN
+    IDC_SPRITE_COLORBTN, 0x37c, 215, 0
+0x4d3c, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 0x6f74, 0x5f6e, 0x6e45, 
+0x6261, 0x656c, 0x744f, 0x6568, 0x4272, 0x7475, 0x6f74, 0x3e6e, 0x5254, 
+0x4555, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 
+0x455f, 0x616e, 0x6c62, 0x4f65, 0x6874, 0x7265, 0x7542, 0x7474, 0x6e6f, 
+0x3c3e, 0x464d, 0x4343, 0x6c6f, 0x726f, 0x7542, 0x7474, 0x6e6f, 0x455f, 
+0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 0x7461, 0x6369, 0x7542, 0x7474, 
+0x6e6f, 0x463e, 0x4c41, 0x4553, 0x2f3c, 0x464d, 0x4343, 0x6c6f, 0x726f, 
+0x7542, 0x7474, 0x6e6f, 0x455f, 0x616e, 0x6c62, 0x4165, 0x7475, 0x6d6f, 
+0x7461, 0x6369, 0x7542, 0x7474, 0x6e6f, 0x3c3e, 0x464d, 0x4343, 0x6c6f, 
+0x726f, 0x7542, 0x7474, 0x6e6f, 0x435f, 0x6c6f, 0x6d75, 0x736e, 0x6f43, 
+0x6e75, 0x3e74, 0x3c35, 0x4d2f, 0x4346, 0x6f43, 0x6f6c, 0x4272, 0x7475, 
+0x6f74, 0x5f6e, 0x6f43, 0x756c, 0x6e6d, 0x4373, 0x756f, 0x746e, "\076" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Editor"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Editor"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호 및 저작권을 표시합니다.\n정보"
+    ID_APP_EXIT             "문서를 저장할지를 묻고 응용 프로그램을 끝냅니다.\n끝내기"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다.\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다.\n이전 창"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "활성 창을 여러 개의 창으로 분할합니다.\n분할"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "선택 영역을 지웁니다.\n지우기"
+    ID_EDIT_CLEAR_ALL       "모두 지웁니다.\n모두 지우기"
+    ID_EDIT_COPY            "선택 영역을 복사하여 클립보드에 넣습니다.\n복사"
+    ID_EDIT_CUT             "선택 영역을 잘라내어 클립보드에 넣습니다.\n잘라내기"
+    ID_EDIT_FIND            "지정한 텍스트를 찾습니다.\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용을 삽입합니다.\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 작업을 반복합니다.\n반복"
+    ID_EDIT_REPLACE         "특정 텍스트를 다른 텍스트로 바꿉니다.\n바꾸기"
+    ID_EDIT_SELECT_ALL      "전체 문서를 선택합니다.\n모두 선택"
+    ID_EDIT_UNDO            "마지막 작업 실행을 취소합니다.\n실행 취소"
+    ID_EDIT_REDO            "이전에 실행 취소된 작업을 다시 실행합니다.\n다시 실행"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기를 변경합니다."
+    AFX_IDS_SCMOVE          "창 위치를 변경합니다."
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소합니다."
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면 크기로 확대합니다."
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다."
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다."
+    AFX_IDS_SCCLOSE         "문서를 저장할 것인지 확인하고 활성 창을 닫습니다."
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복원합니다."
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다."
+END
+
+#endif    // 한국어(대한민국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#include "res\Editor.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "l.KOR\afxres.rc"      // 표준 구성 요소
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
